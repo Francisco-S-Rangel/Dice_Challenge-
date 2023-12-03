@@ -1,0 +1,18 @@
+<div class="buttons-block">
+
+    <div *ngFor="let button of buttons">
+        <button class="dice" (click)="add(button)">d{{button}}</button>
+    </div>
+
+    <button class="restart" (click)="restart()">Restart</button>
+</div>
+
+<div class="input-block">
+
+    <p class="modifier">Amount</p>
+    <input [(ngModel)]="multiplier" type="number" [min]="1" [max]="10">
+    <p class="rules">* Select between 1 and 10</p>
+
+</div>
+
+<app-loader *ngIf="loader!"></app-loader>

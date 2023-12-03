@@ -1,0 +1,29 @@
+<div class="display-block">
+
+    <h1 class="title">
+        Dice Roll Result
+    </h1>
+
+    <div class="display-values">
+        <div *ngFor="let value of values, let i = index">
+     
+                <h2 class="value-dice" [ngClass] = "{
+                    'value-gray': value === 0,
+                    'value-red': value === 1,
+                    'value-green': color === value
+                }"><span class="value-dice plus" *ngIf="i !== 0">+</span>{{value}}</h2>
+        </div>
+    </div>
+
+    <div class="display-values" *ngIf="values.length == 0">
+        <h2 class="value-dice">{{0}}</h2>
+    </div>
+
+    <h2 class="subtitle">
+        Total
+    </h2>
+    <div class="display">
+        <h2 class="value-total">{{total}}</h2>
+    </div>
+
+</div>
